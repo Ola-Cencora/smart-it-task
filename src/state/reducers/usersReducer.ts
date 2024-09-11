@@ -13,22 +13,42 @@ interface UsersState {
   loading: boolean;
   error: string | null;
   data: User[];
+  filters: {
+    searchName: string;
+    searchUsername: string;
+    searchEmail: string;
+    searchPhone: string;
+  };
 }
 
 const initalState = {
   loading: false,
   error: null,
-  data: []
+  data: [],
+  filters: {
+    searchName: '',
+    searchUsername: '',
+    searchEmail: '',
+    searchPhone: '',
+  },
 }
 
 const usersReducer = (state: UsersState = initalState, action: Action): UsersState => {
   switch (action.type) {
     case ActionType.GET_USERS:
-      return { loading: true, error: null, data: [] };
+      return { ...state, loading: true, error: null, data: [] };
     case ActionType.GET_USERS_SUCCESS:
-      return { loading: false, error: null, data: action.payload };
+      return { ...state, loading: false, error: null, data: action.payload };
     case ActionType.GET_USERS_ERROR:
-      return { loading: false, error: action.payload, data: [] };
+      return { ...state, loading: false, error: action.payload, data: [] };
+    case ActionType.SEARCH_USERS:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          [action.payload.filter]: action.payload.value,
+        },
+      };
     default:
       return state;
   }

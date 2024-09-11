@@ -26,3 +26,10 @@ export const getUsers = () => {
     }
   };
 };
+
+export const searchUsers = (payload: { filter: string; value: string }) => {
+  return {
+    type: ActionType.SEARCH_USERS,
+    payload,
+  };
+};
