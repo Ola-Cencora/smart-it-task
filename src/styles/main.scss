@@ -1,0 +1,12 @@
+@import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+  margin: $basic-size * 4;
+  padding: 0;
+  background-color: $color-light;
+  color: $color-dark;
+  font-family: $font-text;
+  text-align: center;
+}
