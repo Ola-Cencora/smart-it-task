@@ -1,5 +1,10 @@
 @import "../../../styles/variables.scss";
 
+.error {
+  background-color: $color-main;
+  padding: $basic-size * 3;
+}
+
 .table {
   margin: 0 auto $basic-size * 3;
   table-layout: fixed;
