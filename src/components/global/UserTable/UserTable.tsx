@@ -18,6 +18,7 @@ const UserTable = () => {
 
   useEffect(() => {
     getUsers();
+    // eslint-disable-next-line
   }, []);
 
   const handleChange = (
@@ -70,38 +71,40 @@ const UserTable = () => {
         <table className={styles.table}>
           <thead className={styles.table__header}>
             <tr>
-              <th>
-                Name
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Phone number</th>
+            </tr>
+            <tr>
+              <td>
                 <SearchField
                   value={searchName}
                   onChange={(e) => handleChange(e, "searchName")}
                   placeholder="Search by name"
                 />
-              </th>
-              <th>
-                Username
+              </td>
+              <td>
                 <SearchField
                   value={searchUsername}
                   onChange={(e) => handleChange(e, "searchUsername")}
                   placeholder="Search by username"
                 />
-              </th>
-              <th>
-                Email
+              </td>
+              <td>
                 <SearchField
                   value={searchEmail}
                   onChange={(e) => handleChange(e, "searchEmail")}
                   placeholder="Search by email"
                 />
-              </th>
-              <th>
-                Phone number
+              </td>
+              <td>
                 <SearchField
                   value={searchPhone}
                   onChange={(e) => handleChange(e, "searchPhone")}
                   placeholder="Search by phone number"
                 />
-              </th>
+              </td>
             </tr>
           </thead>
           <tbody className={styles.table__body}>

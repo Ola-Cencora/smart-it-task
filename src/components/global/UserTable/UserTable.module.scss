@@ -7,29 +7,23 @@
 
 .table {
   margin: 0 auto $basic-size * 3;
-  table-layout: fixed;
-  width: 100%;
+  width: 70vw;
+  background-color: $color-main;
+  padding: $basic-size * 2;
+  border-radius: calc($basic-size / 2);
 
   th,
   td {
-    width: 20%;
-    padding: 10px 0;
-    border: 0;
+    padding: $basic-size;
   }
 
   &__header th {
-    padding-bottom: $basic-size * 3;
+    padding-bottom: $basic-size;
   }
 
-  &__body tr:hover {
-    background-color: lighten($color-main, 20%);
-    transition: $transition-background;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  .table {
-    width: auto;
-    max-width: 70vw;
+  &__body {
+    tr:nth-of-type(odd) {
+      background-color: lighten($color-main, 20%);
+    }
   }
 }
